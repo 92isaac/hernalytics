@@ -15,33 +15,46 @@ export const resultLegend = [
 
 export const geopoliticalZone = [
    {
-        color: 'h-5 w-5 apc mb-4',
+        color: 'md:h-5 md:w-5 apc mb-4',
         name: 'North East',
         total: '3000'
     },
     {
-        color: 'h-5 w-5 lp mb-4',
+        color: 'md:h-5 md:w-5 lp mb-4',
         name: 'North West',
         total: '3000'
     },
     {
-        color: 'h-5 w-5 pdp mb-4',
+        color: 'md:h-5 md:w-5 pdp mb-4',
         name: 'North Central',
         total: '3000'
     },
    {
-        color: 'h-5 w-5 apc mb-4',
+        color: 'md:h-5 md:w-5 apc mb-4',
         name: 'South West',
         total: '3000'
     },
     {
-        color: 'h-5 w-5 lp mb-4',
+        color: 'md:h-5 md:w-5 lp mb-4',
         name: 'South south',
         total: '3000'
     },
     {
-        color: 'h-5 w-5 pdp mb-4',
+        color: 'md:h-5 md:w-5 pdp mb-4',
         name: 'South East',
         total: '3000'
     },
+]
+
+
+export const footLink = [
+    {
+        header:'About'
+    },
+    {
+        header:'About'
+    },
+    {
+        header:'About'
+    }
 ]

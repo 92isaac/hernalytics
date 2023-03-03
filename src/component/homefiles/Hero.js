@@ -17,19 +17,19 @@ const Hero = () => {
           Presidential Race
         </h1>
           <div className="">
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
               Our Community
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />
               </span>
             </button>
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
               Our Community
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />
               </span>
             </button>
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
               Our Community
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />

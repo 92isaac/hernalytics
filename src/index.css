@@ -20,8 +20,12 @@
     fill: #f59e0b;
   }
   
-  .svg-map-container .svg-map__location[data-name="Kano"] {
+  /* .svg-map-container .svg-map__location[data-name="Kano"] {
     fill: #fff;
+  } */
+  .svg-map-container .svg-map__location[data-name="Kano"] {
+    fill: red;
+    background-color: red;
   }
   
   .svg-map-container .svg-map__location[data-name="Kano"]:hover {

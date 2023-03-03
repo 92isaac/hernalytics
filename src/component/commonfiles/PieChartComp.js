@@ -1,9 +1,9 @@
 import React from "react";
-import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const COLORS = ["#0AA83F", "#D62B3C"];
 
-const PieChartComponent = () => {
+const PieChartComp = () => {
   const data = [
     { name: "Total Vote", value: 16891222 },
     { name: "Rejected Vote", value: 8400000 },
@@ -24,8 +24,8 @@ const PieChartComponent = () => {
   };
 
   return (
-    <div className="mx-auto w-full md:w-1/2 text-white">
-      <PieChart width={500} height={500}>
+    <div className=" rounded-md border-lines max-w-7xl mt-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <PieChart width={300} height={300}>
         <Pie
           data={data}
           cx="50%"
@@ -35,16 +35,16 @@ const PieChartComponent = () => {
           labelLine={false}
           label={renderCustomizedLabel}
           dataKey="value"
+          className="text-white"
         >
           {data.map((entry, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
           ))}
         </Pie>
-        <Legend layout="vertical" align="right" verticalAlign="middle" />
         <Tooltip />
       </PieChart>
     </div>
   );
 };
 
-export default PieChartComponent;
+export default PieChartComp;

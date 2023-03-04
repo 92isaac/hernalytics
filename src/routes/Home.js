@@ -1,4 +1,5 @@
 import React from 'react'
+// import Navbar from '../asset/Navbar'
 import Footer from '../component/footerfiles/Footer'
 // import PieChartComp from '../component/commonfiles/PieChartComp'
 import Hero from '../component/homefiles/Hero'
@@ -8,6 +9,7 @@ import PiechartSection from '../component/homefiles/PiechartSection'
 const Home = () => {
   return (
     <div className="bg-gray-800 min-h-screen">
+      {/* <Navbar /> */}
         <Hero />
         <MapSection />
         {/* <PieChartComp /> */}

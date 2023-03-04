@@ -1,14 +1,14 @@
 export const resultLegend = [
     {
-        color: 'h-8 w-8 apc mb-4',
+        color: 'md:h-8 md:w-8 apc mb-4',
         name: 'APC'
     },
     {
-        color: 'h-8 w-8 lp mb-4',
+        color: 'md:h-8 md:w-8 lp mb-4',
         name: 'LP'
     },
     {
-        color: 'h-8 w-8 pdp mb-4',
+        color: 'md:h-8 md:w-8 pdp mb-4',
         name: 'Pdp'
     },
 ]

@@ -33,37 +33,60 @@
     /* background-color: red; */
   }
   
-  /* .svg-map-container .svg-map__location[data-name="Kano"]:hover {
-    fill: #e11d48;
-  } */
-
-
-  /* .svg-map-small-container{
-    width: 100%;
-    max-width: 400px;
-    margin: 0 auto;
-  }
-
-  .svg-map-small-container .svg-map__location {
-    fill: #d1d5db;
-    transition: fill 0.3s ease-in-out;
-    cursor: pointer;
-  }
-  
-  .svg-map-small-container .svg-map__location:hover {
-    fill: #f59e0b;
-  }
-  
-  .svg-map-small-container .svg-map__location[data-name="Kano"] {
-    fill: #fff;
-  }
-  
-  .svg-map-small-container .svg-map__location[data-name="Kano"]:hover {
-    fill: #e11d48;
-  } */
 
   .svg-map-container .svg-map__location [data-name="Kano"] {
     fill: #F00;
     stroke: #000;
     stroke-width: 2;
+  }
+
+  path#borno.svg-map__location,
+  path#kwara.svg-map__location,
+  path#edo.svg-map__location,
+  path#enugu.svg-map__location,
+  path#ebonyi.svg-map__location,
+  path#kogi.svg-map__location,
+  path#ondo.svg-map__location,
+  path#cross-river.svg-map__location,
+  path#imo.svg-map__location,
+  path#delta.svg-map__location,
+  path#abia.svg-map__location,
+  path#anambra.svg-map__location,
+  path#benue.svg-map__location,
+  path#ekiti.svg-map__location,
+  path#bayelsa.svg-map__location,
+  path#rivers.svg-map__location,
+  path#akwa-ibom.svg-map__location{
+    fill: #0AA83F;
+    stroke: #00344D;
+  }
+  path#yobe.svg-map__location,
+  path#gombe.svg-map__location,
+  path#adamawa.svg-map__location,
+  path#taraba.svg-map__location{
+    fill: #D62B3C;
+    stroke: #00344D;
+  }
+ 
+  path#jigawa.svg-map__location{
+    fill: #fff;
+    stroke: #00344D;
+  }
+  path#sokoto.svg-map__location,
+  path#oyo.svg-map__location,
+  path#osun.svg-map__location,
+  path#ogun.svg-map__location,
+  path#lagos.svg-map__location,
+  path#katsina.svg-map__location,
+  path#zamfara.svg-map__location,
+  path#nassarawa.svg-map__location,
+  path#kano.svg-map__location,
+  path#bauchi.svg-map__location,
+  path#fct.svg-map__location,
+  path#kaduna.svg-map__location,
+  path#niger.svg-map__location,
+  path#kebbi.svg-map__location,
+  path#plateau.svg-map__location{
+    fill: #64CCFF;
+    stroke: #00344D;
   }

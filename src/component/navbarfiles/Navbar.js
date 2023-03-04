@@ -98,7 +98,7 @@ const Navbar = () => {
                     </NavLink>
                     <hr className="bg-gray-800 border" />
                     <NavLink
-                      to="/election/voting"
+                      to="/"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       {/* <FaUsers className="text-2xl inline mr-3"/>  */}
@@ -156,7 +156,7 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink
-              to="/about"
+              to="/"
               className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md"
             >
               About Us
@@ -171,7 +171,7 @@ const Navbar = () => {
                 </span>
               </button>
 
-              {isMenuOpen && (
+              {isCommunitiesMenuOpen && (
                   <div className="absolute grid grid-cols-2 z-10 -top-2 mt-12 py-2  bg-white rounded-md shadow-lg">
                     <NavLink
                       to="/"
@@ -181,21 +181,21 @@ const Navbar = () => {
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
                     </NavLink>
                     <NavLink
-                      to="/election/voting"
+                      to="/"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       <FaUsers className="text-2xl"/> Election Candidate
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
                     </NavLink>
                     <NavLink
-                      to="/election/voting"
+                      to="/"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       <FaUserCog className="text-2xl"/> Decide To Run (DTR)
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
                     </NavLink>
                     <NavLink
-                      to="/election/voting"
+                      to="/"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       <RiUserVoiceFill className="text-2xl"/> Reporter
@@ -224,7 +224,7 @@ const Navbar = () => {
                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing.</p>
                     </NavLink>
                     <NavLink
-                      to="/election/voting"
+                      to="/"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       <FaUsers className="text-2xl"/> Election Candidate
@@ -244,7 +244,7 @@ const Navbar = () => {
               to="/services"
               className="block px-3 py-2 text-base font-medium text-gray-300 rounded-md"
             >
-              Services
+              Veo platform
             </NavLink>
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="mt-3 px-2 space-y-1">

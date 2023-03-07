@@ -12,25 +12,25 @@ const Hero = () => {
           </span>
         </h1>
 
-        <div className="flex justify-between mt-10">
+        <div className="block md:flex justify-between mt-10">
         <h1 className="capitalize font-bold text-3xl">
           Presidential Race
         </h1>
           <div className="">
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
+            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
               Post Election
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />
               </span>
             </button>
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
+            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
               Presidential
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />
               </span>
             </button>
-            <button className="px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
-              2023
+            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
+              2023   
               <span className="ml-20">
                 <MdArrowDropDown className="inline-block h-4 w-4" />
               </span>

@@ -1,11 +1,12 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import NigeriaMap from '@svg-maps/nigeria';
 import { SVGMap } from 'react-svg-map';
 import 'react-svg-map/lib/index.css';
 // import mapImage from '../../asset/Frame.png'
 
 const MapOfNigeria = ({size}) => {
+  const [name, setNAme] = useState('')
   const customStyles = {
     'AB': { fill: '#8D3DAF', cursor: 'pointer' },
     'AD': { fill: '#4B0082', cursor: 'pointer' },
@@ -50,16 +51,54 @@ const MapOfNigeria = ({size}) => {
         key={`path-${index}`}
         d={state.attributes.d}
         style={customStyles[state.id]}
-      />
+      >
+          <text
+        x={state.textX} // Set the x-coordinate of the text element
+        y={state.textY} // Set the y-coordinate of the text element
+        dominantBaseline="middle" // Center the text vertically
+        textAnchor="middle" // Center the text horizontally
+        fill="#000" // Set the color of the text to black
+          fontSize="14px" // Set the font size of the text
+        fontWeight="bold" // Set the font weight of the text to bold
+       >
+          {state.name}
+        </text>
+      </path>
     );
   };
 
+  // const renderState = (state, index) => {
+  //   return (
+  //     <g key={`path-${index}`}>
+  //       <path
+  //         d={state.attributes.d}
+  //         style={customStyles[state.id]}
+  //       />
+  //       <text
+  //         x={state.textX} // Set the x-coordinate of the text element
+  //         y={state.textY} // Set the y-coordinate of the text element
+  //         dominantBaseline="middle" // Center the text vertically
+  //         textAnchor="middle" // Center the text horizontally
+  //         fill="#000" // Set the color of the text to black
+  //         fontSize="14px" // Set the font size of the text
+  //         fontWeight="bold" // Set the font weight of the text to bold
+  //       >
+  //         {state.name}
+  //       </text>
+  //     </g>
+  //   );
+  // };
+  
+
   return (
     <div className={size}>
-      {/* <img src={mapImage} alt="map of nigeria" /> */}
       <SVGMap onLocationClick={(e)=>{
+        e.target.innerHTML = setNAme(e.target.id)
         console.log(e)
-      }} map={NigeriaMap} onRenderState={renderState} />
+        console.log(e.target.id)
+      }} map={NigeriaMap} onRenderState={renderState} onLocationMouseOver={(e)=>{
+          console.log(e.target.name)
+      }} />
     </div>
   );
 };

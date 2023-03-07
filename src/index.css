@@ -26,14 +26,13 @@
   
  
   
-/* 
-  path#borno::before {
-    content: "Before the paragraph: ";
-  }
-  path#borno::after {
+
+  /* path#borno::before {
     content: "Before the paragraph: ";
   } */
-  
+  path#taraba.svg-map__location::before {
+    content: "taraba";
+  } 
 
 
  

@@ -101,7 +101,7 @@ const handleDropdownClick = (dropdownName) => {
                   {isMenuOpen.election && (
                   <div className="absolute grid z-10 -top-2 mt-12 py-2 w-max bg-white rounded-md shadow-lg">
                     <NavLink
-                      to="/"
+                      to="/election_data"
                       className="block px-4 py-2 text-sm text-blue-900"
                     >
                       {/* <FaUserAlt className="text-2xl inline mr-3"/>  */}

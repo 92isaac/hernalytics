@@ -65,7 +65,7 @@ const handleDropdownClick = (dropdownName) => {
                     Pre-Election
                   </Link>
                   <Link
-                    to="/"
+                    to="/election_data"
                     className="block px-4 py-2 text-sm"
                   >
                     Election Day Live Updates

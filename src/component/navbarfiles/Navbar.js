@@ -11,9 +11,20 @@ import { MdArrowDropDown } from "react-icons/md";
 import Logo from "../../asset/Hernalytics Full Logo Yellow@3x 1.png";
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isCommunitiesMenuOpen, setIsCommunitiesMenuOpen] = useState(false);
-  const [isElectionMenuOpen, setIsElectionMenuOpen] = useState(false);
+  
+  const [isMenuOpen, setIsMenuOpen] = useState({menu:false, communities:false, election: false});
+
+const handleDropdownClick = (dropdownName) => {
+  if (dropdownName === "menu") {
+    setIsMenuOpen({ type: !isMenuOpen.menu, communities: false, election: false });
+  } else if (dropdownName === "communities") {
+    setIsMenuOpen({ type: false, communities: !isMenuOpen.communities, election: false });
+  } else if (dropdownName === "election") {
+    setIsMenuOpen({ type: false, communities: false, election: !isMenuOpen.election });
+  }
+};
+
+
 
   return (
     <nav className="bg-gray-800">
@@ -34,14 +45,14 @@ const Navbar = () => {
               <div className="relative">
                 <button
                   className="px-3 py-2 text-gray-300 uppercase "
-                  onClick={() => setIsCommunitiesMenuOpen(!isCommunitiesMenuOpen)}
+                  onClick={() => handleDropdownClick('communities')}
                 >
                   Our Communities
                   <span className="ml-1">
                     <MdArrowDropDown className="inline h-4 w-4" />
                   </span>
                 </button>
-                {isCommunitiesMenuOpen && (
+                {isMenuOpen.communities && (
                   <div className="absolute grid grid-cols-2 z-10 -top-2 mt-12 py-2 w-max bg-white rounded-md shadow-lg">
                     <NavLink
                       to="/"
@@ -80,14 +91,14 @@ const Navbar = () => {
 
               <div className="relative">
                 <button className="px-3 py-2 text-gray-300 uppercase "
-                  onClick={() => setIsElectionMenuOpen(!isElectionMenuOpen)}
+                  onClick={() => handleDropdownClick('election')}
                 >
                   Election
                   <span className="ml-1">
                     <MdArrowDropDown className="inline-block h-4 w-4" />
                   </span>
                 </button>
-                  {isElectionMenuOpen && (
+                  {isMenuOpen.election && (
                   <div className="absolute grid z-10 -top-2 mt-12 py-2 w-max bg-white rounded-md shadow-lg">
                     <NavLink
                       to="/"
@@ -145,14 +156,14 @@ const Navbar = () => {
           <div className="-mr-2 flex md:hidden">
             <button
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={() => setIsMenuOpen('menu')}
             >
               <FaBars className="h-6 w-6" />
             </button>
           </div>
         </div>
       </div>
-      {isMenuOpen && (
+      {isMenuOpen.menu && (
         <div className="md:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <NavLink
@@ -163,7 +174,7 @@ const Navbar = () => {
             </NavLink>
             <div className="relative">
               <button className="w-full flex justify-between items-center px-3 py-2 text-base font-medium text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-            onClick={() => setIsCommunitiesMenuOpen(!isCommunitiesMenuOpen)}
+            onClick={() => handleDropdownClick('communities')}
               >
                 <span>Our Community</span>
                 <span className="ml-1">
@@ -171,7 +182,7 @@ const Navbar = () => {
                 </span>
               </button>
 
-              {isCommunitiesMenuOpen && (
+              {isMenuOpen.communities && (
                   <div className="absolute grid grid-cols-2 z-10 -top-2 mt-12 py-2  bg-white rounded-md shadow-lg">
                     <NavLink
                       to="/"
@@ -206,7 +217,7 @@ const Navbar = () => {
             </div>
             <div className="relative">
               <button className="w-full flex justify-between items-center px-3 py-2 text-base font-medium text-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-           onClick={() => setIsElectionMenuOpen(!isElectionMenuOpen)}
+           onClick={() => handleDropdownClick('election')}
               >
                 <span>Election</span>
                 <span className="ml-1">
@@ -214,7 +225,7 @@ const Navbar = () => {
                 </span>
               </button>
 
-              {isElectionMenuOpen && (
+              {isMenuOpen.election && (
                   <div className="absolute grid z-10 -top-2 mt-12 py-2 w-max bg-white rounded-md shadow-lg">
                     <NavLink
                       to="/"

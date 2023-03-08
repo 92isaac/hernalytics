@@ -1,10 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdArrowDropDown } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
+  const [toggle, setToggle] = useState({type:false, office:false, year: false});
+
+  
+console.log(toggle)
+
+const handleDropdownClick = (dropdownName) => {
+  if (dropdownName === "type") {
+    setToggle({ type: !toggle.type, office: false, year: false });
+  } else if (dropdownName === "office") {
+    setToggle({ type: false, office: !toggle.office, year: false });
+  } else if (dropdownName === "year") {
+    setToggle({ type: false, office: false, year: !toggle.year });
+  }
+};
+
+// const handleToggle = (dropdown) => {
+//   // Close the previously opened dropdown
+//   Object.keys(toggle).forEach(key => {
+//     if (key !== dropdown && toggle[key]) {
+//       setToggle(prevState => ({...prevState, [key]: false}));
+//     }
+//   });
+
+//   // Toggle the clicked dropdown
+//   setToggle(prevState => ({...prevState, [dropdown]: !prevState[dropdown]}));
+// }
+
+
+  
+ 
   return (
-    // <div className="bg-gray-800 h-screen">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white pt-10">
+    <div className="bg-gray-800" >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white pt-10 ">
         <h1 className="capitalize font-bold text-3xl">
           Post Election Data{" "}
           <span className=" text-sm ml-4 px-3 text-gray-300  rounded-md outline-4 border border-lines border-bg">
@@ -13,33 +44,112 @@ const Hero = () => {
         </h1>
 
         <div className="block md:flex justify-between mt-10">
-        <h1 className="capitalize font-bold text-3xl">
-          Presidential Race
-        </h1>
-          <div className="">
-            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
-              Post Election
-              <span className="ml-20">
-                <MdArrowDropDown className="inline-block h-4 w-4" />
-              </span>
-            </button>
-            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
-              Presidential
-              <span className="ml-20">
-                <MdArrowDropDown className="inline-block h-4 w-4" />
-              </span>
-            </button>
-            <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4">
-              2023   
-              <span className="ml-20">
-                <MdArrowDropDown className="inline-block h-4 w-4" />
-              </span>
-            </button>
+          <h1 className="capitalize font-bold text-3xl">Presidential Race</h1>
+          <div className="block md:flex">
+            <div className="relative"  >
+              <button
+                className=" md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-2"
+                onClick={() => handleDropdownClick("type")}
+              >
+                Post Election
+                <span className="ml-20">
+                  <MdArrowDropDown className="inline-block h-4 w-4" />
+                </span>
+              </button>
+              {toggle.type && (
+                <div className="absolute z-10 -top-2 mt-12 md:mt-16 py-4 w-60 border-bg text-white rounded-md shadow-lg divide-y-2 divide-slate-400">
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm"
+                  >
+                    Pre-Election
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm"
+                  >
+                    Election Day Live Updates
+                  </Link>
+
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm"
+                  >
+                    Post-Election Analysis
+                  </Link>
+                </div>
+              )}
+            </div>
+            <div className="relative text-gray-300"  >
+              <button className=" block md:inline w-60 px-3 py-2 text-gray-300 hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4" 
+              onClick={() => handleDropdownClick("office")}
+              >
+                Presidential
+                <span className="ml-20">
+                  <MdArrowDropDown className="inline-block h-4 w-4" />
+                </span>
+              </button>
+              {toggle.office && (
+                <div className="absolute z-10 -top-2 mt-12 md:mt-16 py-2 w-60  rounded-md shadow-lg divide-y divide-slate-500 border-bg">
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                    Presidential
+                  </Link>
+
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                    Election Candidate
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                    Decide To Run (DTR)
+                  </Link>
+                </div>
+              )}
+            </div>
+            <div className="relative text-gray-300"  >
+              <button className=" block md:inline w-60 px-3 py-2  hover:bg-gray-700 hover:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white border-bg md:mr-4" 
+              onClick={() => handleDropdownClick("year")}
+              >
+                2023
+                <span className="ml-20">
+                  <MdArrowDropDown className="inline-block h-4 w-4" />
+                </span>
+              </button>
+              {toggle.year && (
+                <div className="absolute z-10 -top-2 mt-12 md:mt-16 py-2 w-60  rounded-md shadow-lg divide-y divide-slate-500 border-bg">
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                    2023
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                   2019
+                  </Link>
+                  <Link
+                    to="/"
+                    className="block px-4 py-2 text-sm "
+                  >
+                    2015
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-        <div className="border-lines w-11/12 mx-auto mt-4"/>
+        <div className="border-lines w-11/12 mx-auto mt-4" />
       </div>
-    // </div>
+    </div>
   );
 };
 

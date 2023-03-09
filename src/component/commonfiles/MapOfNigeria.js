@@ -96,7 +96,7 @@ const MapOfNigeria = ({size}) => {
         e.target.innerHTML = setNAme(e.target.id)
         console.log(e)
         console.log(e.target.id)
-      }} map={NigeriaMap} onRenderState={renderState} onLocationMouseOver={(e)=>{
+      }} map={NigeriaMap} onRenderState={renderState} name={name} onLocationMouseOver={(e)=>{
           console.log(e.target.name)
       }} />
     </div>

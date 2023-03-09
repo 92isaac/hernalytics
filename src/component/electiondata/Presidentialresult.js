@@ -39,7 +39,7 @@ const Presidentialresult = () => {
     // const percentage = 
 
   return (
-    <div className="bg-gray-800 text-white min-h-screen">
+    <div className="bg-gray-800 text-white min-h-max md:pb-20">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="uppercase font-bold">president</h2>
         {loading ? <Loading /> :  <div className="flex justify-between w-full bg-gray-800 p-2" >

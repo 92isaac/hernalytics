@@ -71,8 +71,8 @@ const StateTable = ({ political_party_name, }) => {
   const check = checkParty();
 
   return (
-    <div className="w-full overflow-x-auto">
-      <table className="w-full whitespace-no-wrap border-collapse border border-slate-400">
+    <div className="w-full overflow-x-auto border border-b-md md:mb-20">
+      <table className="w-full whitespace-no-wrap border-collapse border border-slate-400 border-b-md">
         <thead>
           <tr className="text-left font-bold">
             <th className="px-6 py-3 border border-slate-300">State</th>

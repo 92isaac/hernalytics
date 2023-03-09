@@ -34,9 +34,9 @@ const ScoreBar = ({full_name, political_party_name, candidates_vote, percentage,
   return (
 
           <div className={`relative h-5 bg-${checkParty()} `} style={{width:`${width}%`}}>
-            <div className="absolute bg-white p-1 w-max h-18 mt-7">
+            <div className={`absolute bg-white p-1 w-max h-18 mt-7`}>
               <RiArrowUpSFill className="text-white text-2xl absolute font-bold -mt-5" />
-              <div className="flex ">
+              <div className="flex">
                 <img src={checkImage()} alt="" className="w-9 h-9" />
                 <div className="block px-2">
                     <h3 className={`text-${checkParty()}`}>{full_name}, {political_party_name}</h3>

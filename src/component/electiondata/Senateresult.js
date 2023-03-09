@@ -27,8 +27,7 @@ const Senateresult = () => {
       fetchData();
     }, []);
 
-    const calculatePercentage = (votes, ) => {
-        
+    const calculatePercentage = (votes, ) => { 
         const totalVote = data.reduce((acc, curr)=> acc + curr.candidates_vote
         , 0)
         return ((votes / totalVote) * 100).toFixed(2);

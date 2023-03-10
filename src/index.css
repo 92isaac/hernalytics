@@ -56,6 +56,7 @@
   path#akwa-ibom.svg-map__location{
     fill: #0AA83F;
     stroke: #00344D;
+    color: #fff;
   }
   path#yobe.svg-map__location,
   path#gombe.svg-map__location,

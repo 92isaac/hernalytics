@@ -8,6 +8,7 @@ const CheckResult = () => {
       sgsggs
       <Nigeriamap />
     <D3Demo />
+
     </div>
   )
 }

@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import NigeriaMap from '@svg-maps/nigeria';
 import { SVGMap } from 'react-svg-map';
 import 'react-svg-map/lib/index.css';
-// import mapImage from '../../asset/Frame.png'
 
 const MapOfNigeria = ({size}) => {
-  const [name, setNAme] = useState('')
+  const [name, setName] = useState('')
   const customStyles = {
     'AB': { fill: '#8D3DAF', cursor: 'pointer' },
     'AD': { fill: '#4B0082', cursor: 'pointer' },
@@ -46,59 +45,36 @@ const MapOfNigeria = ({size}) => {
     'YO': { fill: '#008000', cursor: 'pointer' },
   };
   const renderState = (state, index) => {
+    console.log(state, index);
     return (
       <path
         key={`path-${index}`}
         d={state.attributes.d}
         style={customStyles[state.id]}
+        onLocationFocus={() =>{
+           setName(state.name);
+           console.log(state.name)
+        }} // update name state variable on click
       >
-          <text
-        x={state.textX} // Set the x-coordinate of the text element
-        y={state.textY} // Set the y-coordinate of the text element
-        dominantBaseline="middle" // Center the text vertically
-        textAnchor="middle" // Center the text horizontally
-        fill="#000" // Set the color of the text to black
-          fontSize="14px" // Set the font size of the text
-        fontWeight="bold" // Set the font weight of the text to bold
-       >
+        <text
+          x={state.textX}
+          y={state.textY}
+          dominantBaseline="middle"
+          textAnchor="middle"
+          fill="#000"
+          fontSize="14px"
+          fontWeight="bold"
+        >
           {state.name}
         </text>
       </path>
     );
   };
 
-  // const renderState = (state, index) => {
-  //   return (
-  //     <g key={`path-${index}`}>
-  //       <path
-  //         d={state.attributes.d}
-  //         style={customStyles[state.id]}
-  //       />
-  //       <text
-  //         x={state.textX} // Set the x-coordinate of the text element
-  //         y={state.textY} // Set the y-coordinate of the text element
-  //         dominantBaseline="middle" // Center the text vertically
-  //         textAnchor="middle" // Center the text horizontally
-  //         fill="#000" // Set the color of the text to black
-  //         fontSize="14px" // Set the font size of the text
-  //         fontWeight="bold" // Set the font weight of the text to bold
-  //       >
-  //         {state.name}
-  //       </text>
-  //     </g>
-  //   );
-  // };
-  
-
   return (
     <div className={size}>
-      <SVGMap onLocationClick={(e)=>{
-        e.target.innerHTML = setNAme(e.target.id)
-        console.log(e)
-        console.log(e.target.id)
-      }} map={NigeriaMap} onRenderState={renderState} name={name} onLocationMouseOver={(e)=>{
-          console.log(e.target.name)
-      }} />
+      <SVGMap map={NigeriaMap} onRenderState={renderState} />
+      {name && <div style={{ position: 'absolute', top: 0, left: 0 }}>{name}</div>}
     </div>
   );
 };

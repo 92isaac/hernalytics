@@ -6,6 +6,7 @@ import ElectionData from './routes/ElectionData';
 import Home from './routes/Home';
 import Footer from './component/footerfiles/Footer'
 import Nigeriamap from './component/commonfiles/Nigeriamap';
+import PreElection from './routes/PreElection';
 
 function App() {
   return (
@@ -14,8 +15,9 @@ function App() {
         <Navbar />
         <Hero />
         <Routes>
-          <Route path='/' element={<Home />} />
+          <Route path='/pre_election' element={<Home />} />
           <Route path='/election_data' element={<ElectionData />} />
+          <Route path='/' element={<PreElection />} />
           <Route path='/demomap' element={<Nigeriamap  />} />
         </Routes>
         <Footer />

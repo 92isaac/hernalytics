@@ -1,5 +1,4 @@
 import React from 'react'
-// import Footer from '../component/footerfiles/Footer'
 import MapSection from '../component/homefiles/MapSection'
 import PiechartSection from '../component/homefiles/PiechartSection'
 
@@ -8,7 +7,6 @@ const Home = () => {
     <div className="">
         <MapSection />
         <PiechartSection />
-        {/* <Footer /> */}
     </div>
   )
 }

@@ -3,6 +3,10 @@ import axios from "axios";
 import Loading from "./Loading";
 import Errorr from "./Errorr";
 
+
+
+
+
 const StateTable = ({ political_party_name, }) => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -14,21 +18,27 @@ const StateTable = ({ political_party_name, }) => {
         const response = await axios.get(
           "https://elect-her.herokuapp.com/api/v1/elections/candidate-total-votes?type=state_result"
         );
-        setData(response.data);
+        setData(response?.data);
         console.log(response.data);
         setLoading(false);
         setError('');
       } catch (error) {
+        
         console.error(error);
         setLoading(false);
-        setError(error.message);
+        setError('something went wrong');
       }
     };
     fetchData();
   }, []);
-//   console.log(data);
 
+
+
+
+
+  
   const calculatePercentage = (votes) => {
+      console.log(data);
     let percentage;
     for (let state in data) {
       let totalVotes = 0;
@@ -48,15 +58,10 @@ const StateTable = ({ political_party_name, }) => {
       }
     }
 
-    // console.log(Object.entries(data));
-    // const totalVote = Object.entries(data).reduce(
-    //   (acc, curr) => acc + curr.candidates_vote,
-    //   0
-    // );
-    // return ((votes / totalVote) * 100).toFixed(2);
+
   };
 
-  const checkParty = () => {
+  const checkParty = (political_party_name) => {
     if (political_party_name === "All Progressives Congress") {
       return "blue-500";
     }
@@ -67,10 +72,10 @@ const StateTable = ({ political_party_name, }) => {
       return "red-500";
     }
   };
-
-  const check = checkParty();
+  
 
   return (
+
     <div className="w-full overflow-x-auto border border-b-md md:mb-20">
       <table className="w-full whitespace-no-wrap border-collapse border border-slate-400 border-b-md">
         <thead>
@@ -86,45 +91,57 @@ const StateTable = ({ political_party_name, }) => {
           <Loading />
         ) : (
           <tbody>
-            {Object.entries(data).map(([state, results]) => (
+            {Object?.entries(data)?.map(([state, results]) => (
               <tr key={state} className="">
                 <td className="px-6 py-4 border border-slate-300">{state}</td>
                 <td className="px-6 py-4 border border-slate-300">
                   {calculatePercentage(
-                    results.find(
-                      ({ political_party_name }) =>
-                        political_party_name === "Labour Party"
-                    ).candidate_votes
-                  )}
+                    results?.find(({ political_party_name }) =>political_party_name === "Labour Party")?.candidate_votes
+                  )
+                 
+                  
+                  }
                   %
                 </td>
                 <td className="px-6 py-4 border border-slate-300">
-                  {calculatePercentage(
-                    results.find(
+                  {
+                  calculatePercentage(
+                    results?.find(
                       ({ political_party_name }) =>
                         political_party_name === "People's Democratic Party"
-                    ).candidate_votes
-                  )}
+                    )?.candidate_votes
+                   
+                  )
+                  }
                   %
                 </td>
-                <td className="px-6 py-4 border border-slate-300">
-                  {calculatePercentage(
-                    results.find(
+                
+                 <td className="px-6 py-4 border border-slate-300">
+                  {
+                  calculatePercentage(
+                    results?.find(
                       ({ political_party_name }) =>
-                        political_party_name === "All Progressives Congress"
-                    ).candidate_votes
-                  )}
+                        political_party_name === "All Progressive Congress"
+                    )?.candidate_votes
+                    
+                  )
+                  }
+                  %
                 </td>
+                
                 <td
                   className={`px-6 py-4 border border-slate-300 bg-${
-                    political_party_name ? check : null
+                    checkParty(results?.find((political_party_name) => {
+                      console.log(political_party_name);
+                      return political_party_name;
+                    })?.political_party_name)
                   }`}
                 >
                   {
-                    results.find((political_party_name) => {
+                    results?.find((political_party_name) => {
                       console.log(political_party_name);
                       return political_party_name;
-                    }).political_party_name
+                    })?.political_party_name
                   }
                 </td>
               </tr>
@@ -138,3 +155,5 @@ const StateTable = ({ political_party_name, }) => {
 };
 
 export default StateTable;
+
+

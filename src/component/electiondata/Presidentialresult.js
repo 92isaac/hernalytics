@@ -43,7 +43,7 @@ const Presidentialresult = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="uppercase font-bold">president</h2>
         {loading ? <Loading /> :  <div className="flex justify-between w-full bg-gray-800 p-2" >
-    {data.map((itr)=>(<ScoreBar key={itr.political_party_name} {...itr} percentage={calculatePercentage(itr.candidates_vote)} width={calculatePercentage(itr.candidates_vote)}/>))}
+    {data.map((itr)=>(<ScoreBar key={itr?.political_party_name} {...itr} percentage={calculatePercentage(itr?.candidates_vote)} width={calculatePercentage(itr?.candidates_vote)}/>))}
       </div> }
       {error ? <Errorr message={error}/> : null}
     </div>

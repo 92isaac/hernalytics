@@ -26,5 +26,14 @@ body{
 }
 
 
-  /*  con_bg: '#1E1E1E', */
+@media (min-width: 768px) {
+  .neg-tinubu{
+    margin-left: -100px;
+  }
+
+  .neg-atiku{
+    margin-left: -45px;
+  }
+}
+
   

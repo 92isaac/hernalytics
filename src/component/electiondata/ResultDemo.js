@@ -30,7 +30,7 @@ const ResultDemo = () => {
           </div>
         </div>
       </div>
-      <div className={`relative h-5 bg-yellow-500 w-1/3 `}>
+      <div className={`relative h-5 bg-blue-400 w-1/3 `}>
         <div className={`absolute bg-white p-1 w-16 md:w-max md:h-16 mt-7`}>
           <RiArrowUpSFill className="text-white text-2xl absolute font-bold -mt-5" />
           <div className="flex">

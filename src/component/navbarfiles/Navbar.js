@@ -11,9 +11,7 @@ import { MdArrowDropDown } from "react-icons/md";
 import Logo from "../../asset/Hernalytics Full Logo Yellow@3x 1.png";
 
 const Navbar = () => {
-  
-  const [isMenuOpen, setIsMenuOpen] = useState({menu:false, communities:false, election: false});
-
+const [isMenuOpen, setIsMenuOpen] = useState({menu:false, communities:false, election: false});
 const handleDropdownClick = (dropdownName) => {
   if (dropdownName === "menu") {
     setIsMenuOpen({ type: !isMenuOpen.menu, communities: false, election: false });
@@ -23,6 +21,8 @@ const handleDropdownClick = (dropdownName) => {
     setIsMenuOpen({ type: false, communities: false, election: !isMenuOpen.election });
   }
 };
+
+
 
 
 

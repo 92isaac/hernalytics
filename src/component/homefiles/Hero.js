@@ -7,6 +7,7 @@ const Hero = () => {
   const [toggle, setToggle] = useState({type:false, office:false, year: false});
   const { selected, setSelected } = useContextGloball()
 
+
   
 console.log(toggle)
 

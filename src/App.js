@@ -7,6 +7,7 @@ import Home from './routes/Home';
 import Footer from './component/footerfiles/Footer'
 import Nigeriamap from './component/commonfiles/Nigeriamap';
 import PreElection from './routes/PreElection';
+import ErrorPage from './component/commonfiles/ErrorPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/election_data' element={<ElectionData />} />
           <Route path='/' element={<PreElection />} />
           <Route path='/demomap' element={<Nigeriamap  />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </Router>

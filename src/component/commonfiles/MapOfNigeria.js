@@ -5,7 +5,7 @@ import { SVGMap } from 'react-svg-map';
 import 'react-svg-map/lib/index.css';
 
 const MapOfNigeria = ({size}) => {
-  const [name, setName] = useState('')
+  const [name] = useState('')
   const customStyles = {
     'AB': { fill: '#8D3DAF', cursor: 'pointer' },
     'AD': { fill: '#4B0082', cursor: 'pointer' },
@@ -46,26 +46,32 @@ const MapOfNigeria = ({size}) => {
   };
   const renderState = (state, index) => {
     console.log(state, index);
+    console.log(state?.name);
     return (
       <path
         key={`path-${index}`}
-        d={state.attributes.d}
-        style={customStyles[state.id]}
-        onLocationFocus={() =>{
-           setName(state.name);
-           console.log(state.name)
-        }} // update name state variable on click
+        d={state?.attributes?.d}
+        style={customStyles[state?.id]}
+        // locationAriaLabel={() =>{
+        //    setName(state?.name);
+        //    console.log(state?.name)
+        // }}
+        name={state?.name}
+        locationAriaLabel={(location, index) => `Location ${index + 1}: ${location.name}`}
       >
+
         <text
-          x={state.textX}
-          y={state.textY}
+          x={state?.textX}
+          y={state?.textY}
           dominantBaseline="middle"
           textAnchor="middle"
-          fill="#000"
+          // fill="#000"
           fontSize="14px"
           fontWeight="bold"
+          childrenBefore={state.name}
+          childrenfter={state.name}
         >
-          {state.name}
+          {state?.name}
         </text>
       </path>
     );
@@ -73,7 +79,8 @@ const MapOfNigeria = ({size}) => {
 
   return (
     <div className={size}>
-      <SVGMap map={NigeriaMap} onRenderState={renderState} />
+      <SVGMap map={NigeriaMap} onRenderState={renderState} locationTabIndex={renderState} locationAriaLabel={(location, index) => `Location ${index }: ${location.name}`} onLocationClick={(e)=>console.log(e)} 
+/>
       {name && <div style={{ position: 'absolute', top: 0, left: 0 }}>{name}</div>}
     </div>
   );

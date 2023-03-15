@@ -75,7 +75,7 @@ const handleDropdownClick = (dropdownName) => {
                   </Link>
 
                   <Link
-                    to="/"
+                    to="/pre_election"
                     className="block px-4 py-1 text-sm"
                     onClick={() => {
                       setSelected({...selected, header:"Post Election"})
